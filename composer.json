@@ -1,0 +1,65 @@
+{
+  "authors": [
+    {
+      "homepage": "https://dl2.tech",
+      "name": "DL2 IT Services, Ltd"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "DL2\\Slim\\Module\\": "src/modules"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "DL2\\Slim\\Skeleton\\Tests\\": "tests/"
+    }
+  },
+  "config": {
+    "process-timeout": 0
+  },
+  "description": "Slim Framework skeleton application for rapid development",
+  "keywords": [
+    "dl2",
+    "slim",
+    "controller",
+    "action controller",
+    "microframework",
+    "psr7",
+    "rest",
+    "router"
+  ],
+  "license": "MIT",
+  "name": "dl2/slim-skeleton",
+  "require": {
+    "dl2/slim-controller": "^3",
+    "php": ">= 7 < 7.2"
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^2",
+    "phpmd/phpmd": "^2",
+    "phpunit/phpunit": "^6",
+    "squizlabs/php_codesniffer": "^3"
+  },
+  "scripts": {
+    "fix": [
+      "@php-cs-fixer:fix",
+      "@php-codesniffer:fix"
+    ],
+    "lint": [
+      "phpmd public,src,tests text phpmd.xml",
+      "@php-cs-fixer:lint",
+      "@php-codesniffer:lint"
+    ],
+    "php-codesniffer:fix": "phpcbf -sn",
+    "php-codesniffer:lint": "phpcs -s",
+    "php-cs-fixer:fix": "php-cs-fixer fix",
+    "php-cs-fixer:lint": "php-cs-fixer --dry-run -v fix",
+    "test": [
+      "phpunit"
+    ]
+  },
+  "support": {
+    "issues": "https://github.com/dl2tech/slim-skeleton/issues"
+  }
+}

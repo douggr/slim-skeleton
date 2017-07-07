@@ -1,0 +1,26 @@
+#
+# https://www.rt7.com.br - RT7 Soluções em TI.
+#
+
+#
+# Add the `COMPOSER_AUTH` environment variable with your Assembla
+# credentials in JSON format:
+# {
+#   "http-basic": {
+#     "hostname": {
+#       "username": "your username",
+#       "password": "p4ss0wrd!"
+#     }
+#   }
+# }
+#
+image: php:7.0-cli
+
+pipelines:
+  default:
+    - step:
+        script:
+          - apt-get update
+          - apt-get install -y git subversion unzip
+          - curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+          - composer test
